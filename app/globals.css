@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 18 18 18; /* #121212 */
+    --foreground: 234 234 234; /* #EAEAEA */
+    --accent: 178 100% 32%; /* #00A79D */
+
+    --card: 18 18 18;
+    --card-foreground: 234 234 234;
+
+    --popover: 18 18 18;
+    --popover-foreground: 234 234 234;
+
+    --primary: 178 100% 32%;
+    --primary-foreground: 234 234 234;
+
+    --secondary: 234 234 234;
+    --secondary-foreground: 18 18 18;
+
+    --muted: 234 234 234;
+    --muted-foreground: 18 18 18;
+
+    --accent: 178 100% 32%;
+    --accent-foreground: 234 234 234;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 234 234 234;
+    --input: 234 234 234;
+    --ring: 178 100% 32%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Force header sizing for Chrome cache issues */
+@layer components {
+  /* Force name/logo sizing */
+  header nav a[href="#home"] {
+    font-size: 1.5rem !important; /* text-2xl */
+    font-weight: 700 !important;
+  }
+  
+  @media (min-width: 768px) {
+    header nav a[href="#home"] {
+      font-size: 1.875rem !important; /* text-3xl */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    header nav a[href="#home"] {
+      font-size: 2.25rem !important; /* text-4xl */
+    }
+  }
+  
+  /* Force navigation link sizing */
+  header nav .hidden.md\\:flex a:not([href="#home"]) {
+    font-size: 1.125rem !important; /* text-lg */
+    font-weight: 500 !important;
+  }
+  
+  @media (min-width: 768px) {
+    header nav .hidden.md\\:flex a:not([href="#home"]) {
+      font-size: 1.25rem !important; /* text-xl */
+    }
+  }
+  
+  /* Force contact button sizing */
+  header nav button a[href="#contact"] {
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 2rem !important;
+  }
+  
+  @media (min-width: 768px) {
+    header nav button a[href="#contact"] {
+      font-size: 1.25rem !important;
+    }
+  }
+}
+
+/* Custom styles for timeline */
+.timeline-item {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 40px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
+  z-index: 1;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 18px;
+  bottom: -20px; /* Extend line downwards */
+  width: 2px;
+  background-color: var(--accent);
+  z-index: 0;
+}
+
+.timeline-item:last-child::after {
+  display: none; /* Hide line for the last item */
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
