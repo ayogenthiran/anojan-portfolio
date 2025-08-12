@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import BlogClientPage from "./BlogClientPage"
+import { getBlogPosts } from "@/lib/blog-utils"
 
 export const metadata: Metadata = {
   title: "My Blog | Anojan Yogenthiran",
@@ -7,5 +8,6 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
-  return <BlogClientPage />
+  const posts = getBlogPosts()
+  return <BlogClientPage posts={posts} />
 }

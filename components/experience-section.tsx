@@ -8,21 +8,7 @@ interface ExperienceSectionProps {
 }
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({ className }) => {
-  // Debug function to test logo loading
-  const testLogoLoading = () => {
-    const logos = ['/hehealth.png', '/senzmate.png', '/kaidu.png', '/uwo.png'];
-    logos.forEach(logo => {
-      const img = new Image();
-      img.onload = () => console.log(`✅ Logo loaded successfully: ${logo}`);
-      img.onerror = () => console.error(`❌ Failed to load logo: ${logo}`);
-      img.src = logo;
-    });
-  };
 
-  // Test logos on component mount
-  React.useEffect(() => {
-    testLogoLoading();
-  }, []);
 
   return (
     <div className={cn("text-foreground", className)}>

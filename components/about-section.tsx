@@ -16,7 +16,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ className }) => {
           <div className="relative">
                          <div className="w-80 h-80 md:w-96 md:h-96 rounded-full border-4 border-[#00A79D] overflow-hidden bg-gray-800 flex items-center justify-center shadow-2xl">
               <Image
-                src="/anojan_profile.JPG"
+                src="/images/resume/anojan_profile.JPG"
                 alt="Anojan Yogenthiran - AI/ML Engineer"
                 width={500}
                 height={500}

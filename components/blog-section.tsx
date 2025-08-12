@@ -1,31 +1,38 @@
 import type React from "react"
 import Link from "next/link"
-import { blogData } from "@/lib/data"
+import { getBlogPosts } from "@/lib/blog-utils"
+import { Brain, BookText, Lightbulb, Rocket, FileText } from 'lucide-react'
 import { cn } from "@/lib/utils"
 
 interface BlogSectionProps {
   className?: string
 }
 
+const iconMap: { [key: string]: any } = {
+  Brain,
+  BookText,
+  Lightbulb,
+  Rocket,
+  FileText,
+}
+
 const BlogSection: React.FC<BlogSectionProps> = ({ className }) => {
+  const posts = getBlogPosts()
   return (
     <div className={cn("text-foreground", className)}>
-      <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 text-center">My Blog</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-accent mb-8 text-center">My Blog</h2>
       <p className="text-lg md:text-xl text-gray-400 text-center mb-16 max-w-3xl mx-auto">
         Insights and thoughts on AI/ML, technology, and more.
       </p>
       <div className="space-y-8">
-        {blogData.map((article, index) => (
+        {posts.map((article, index) => (
           <div key={index} className="pb-8 border-b border-gray-800 last:border-b-0">
             <div className="flex items-start gap-4 mb-3">
-              {article.icon && <article.icon className="h-6 w-6 text-accent flex-shrink-0 mt-1" />}{" "}
-              {/* Render specific icon */}
+              {article.icon && iconMap[article.icon] && React.createElement(iconMap[article.icon], { className: "h-6 w-6 text-accent flex-shrink-0 mt-1" })}
               <div className="flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
                   <Link
-                    href={article.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`/blog/${article.id}`}
                     className="text-xl md:text-2xl font-semibold text-foreground hover:text-accent transition-colors leading-tight"
                   >
                     {article.title}

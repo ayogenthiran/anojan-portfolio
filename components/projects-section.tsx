@@ -12,7 +12,7 @@ interface ProjectsSectionProps {
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
   return (
     <div className={cn("text-foreground", className)}>
-      <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4 text-center">Featured Projects</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-accent mb-8 text-center">Featured Projects</h2>
       <div className="space-y-12">
         {projectData.map((project, index) => (
           <div

@@ -128,3 +128,98 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Blog content styles */
+.blog-content {
+  margin-top: 2rem;
+}
+
+.blog-content h1:first-child {
+  margin-top: 3rem;
+}
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.blog-content table th {
+  background-color: rgb(31 41 55);
+  color: rgb(234 234 234);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgb(75 85 99);
+}
+
+.blog-content table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgb(75 85 99);
+  color: rgb(209 213 219);
+}
+
+.blog-content table tr:nth-child(even) {
+  background-color: rgb(17 24 39);
+}
+
+.blog-content table tr:hover {
+  background-color: rgb(31 41 55);
+}
+
+.blog-content img {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.blog-content blockquote {
+  border-left: 4px solid rgb(0 167 157);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: rgb(156 163 175);
+}
+
+.blog-content code {
+  background-color: rgb(31 41 55);
+  color: rgb(0 167 157);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.blog-content pre {
+  background-color: rgb(31 41 55);
+  color: rgb(209 213 219);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.blog-content pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* HTML div styling for image containers */
+.blog-content div[style*="text-align: center"] {
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+.blog-content div[style*="text-align: center"] img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.blog-content div[style*="text-align: center"] div {
+  font-size: 0.9em;
+  color: #444;
+  margin-top: 10px;
+  font-style: italic;
+}

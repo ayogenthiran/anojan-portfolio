@@ -55,10 +55,11 @@ export interface BlogPost {
   id: string
   title: string
   date: string
+  originalDate?: any
   excerpt: string
   content: string
   readingTime: string
-  icon: LucideIcon
+  icon: string
 }
 
 export interface SkillCategory {
@@ -84,7 +85,7 @@ export const educationData: Education[] = [
     gpa: "3.8/4.0", // Added GPA
     thesis: "Generative AI-Driven Aptamer Discovery for Accelerated Drug Development", // Added thesis
     // awards: ["Dean's List", "Graduate Research Scholarship"], // Removed awards
-    logo: "/uwo.png",
+    logo: "/images/resume/uwo.png",
   },
   {
     degree: "Bachelor of Science (Honours) in Electrical and Electronic Engineering",
@@ -93,7 +94,7 @@ export const educationData: Education[] = [
     location: "Colombo, Sri Lanka",
     dates: "Jan 2018 – Dec 2021",
     // gpa: "3.8/4.0", // Removed GPA
-    logo: "/sliit.png",
+    logo: "/images/resume/sliit.png",
   },
 ]
 
@@ -103,7 +104,7 @@ export const experienceData: Experience[] = [
     company: "Kaidu.ai",
     location: "Toronto, Ontario",
     dates: "Jan 2025 – Apr 2025",
-    logo: "/kaidu.png",
+    logo: "/images/resume/kaidu.png",
     description: [
       "Used DBSCAN clustering and dynamic time warping on RSSI signals to classify device mobility with 89% accuracy, analyzing thousands of time-series samples.",
       "Reduced false positives by 600% by integrating a dynamic Fourier smoothing filter into RSSI preprocessing.",
@@ -115,7 +116,7 @@ export const experienceData: Experience[] = [
     company: "Intelligence Data Science Lab, Western University",
     location: "London, Ontario",
     dates: "Apr 2024 – Dec 2024",
-    logo: "/uwo.png",
+    logo: "/images/resume/uwo.png",
     description: [
       "Fine-tuned a DeepSELEX-inspired CNN using PyTorch on large-scale SELEX datasets, improving DNA-binding sequence classification accuracy by 20% over lab benchmarks.",
       "Enhanced miRNA-target gene prediction by fine-tuning LLaMA 3.1 and Mistral-7B models for biological sequence representation, expanding generative AI applications in bioinformatics research.",
@@ -128,7 +129,7 @@ export const experienceData: Experience[] = [
     company: "HeHealth",
     location: "Singapore", // Updated location
     dates: "Oct 2022 – Oct 2023",
-    logo: "/hehealth.png",
+    logo: "/images/resume/hehealth.png",
     description: [
       "Optimized ResNet and VGG16 CNN models on a proprietary medical imaging dataset, achieving 96% classification accuracy for STD detection; deployed models using AWS SageMaker.",
       "Built CI/CD-enabled MLOps pipelines using GitHub Actions and SageMaker Pipelines to support online batch retraining, mitigating model drift and enabling continuous learning from live diagnostic feedback.",
@@ -141,7 +142,7 @@ export const experienceData: Experience[] = [
     company: "SenzMate AIoT Intelligence",
     location: "Colombo, Sri Lanka",
     dates: "Dec 2021 – Sep 2022",
-    logo: "/senzmate.png",
+    logo: "/images/resume/senzmate.png",
     description: [
       "Developed and deployed an LSTM-based anomaly detector using TensorFlow and Flask API for edge IoT devices, achieving 90% detection accuracy and reducing false alerts by 10% in real-time monitoring.",
       "Built scalable ETL pipelines with PySpark and Dask to clean and unify 15M+ insurance claims records, improving data consistency and supporting accurate cost predictions.",
@@ -203,43 +204,7 @@ export const projectData: Project[] = [
   // Add more projects as needed
 ]
 
-export const blogData: BlogPost[] = [
-  {
-    title: "Demystifying the Transformer Architecture",
-    date: "July 8, 2025",
-    excerpt:
-      "A deep dive into the revolutionary Transformer architecture, explaining its core components like self-attention and positional encoding, and its impact on modern NLP.",
-    link: "#", // Placeholder link
-    readingTime: "7 min read",
-    icon: BookText, // Example icon
-  },
-  {
-    title: "MLOps Best Practices for Scalable AI Systems",
-    date: "June 20, 2025",
-    excerpt:
-      "Exploring key MLOps principles including CI/CD for ML, model monitoring, and data versioning to build robust and scalable AI solutions.",
-    link: "#", // Placeholder link
-    readingTime: "10 min read",
-    icon: Lightbulb, // Example icon
-  },
-  {
-    title: "Reinforcement Learning: From Basics to Advanced Concepts",
-    date: "May 15, 2025",
-    excerpt:
-      "An introductory guide to reinforcement learning, covering fundamental concepts like agents, environments, rewards, and popular algorithms like Q-learning and policy gradients.",
-    link: "#", // Placeholder link
-    readingTime: "12 min read",
-    icon: Rocket, // Example icon
-  },
-  {
-    title: "Every Interview Ever in Chronological Order",
-    date: "March 31, 2025",
-    excerpt: "A chronological account of every interview experience, detailing lessons learned and insights gained.",
-    link: "#",
-    readingTime: "5 min read",
-    icon: FileText, // Example icon
-  },
-]
+
 
 export const skillsData: SkillCategory[] = [
   {
