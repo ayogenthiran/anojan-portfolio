@@ -26,7 +26,3 @@ pnpm dev
 # Build for production
 pnpm build
 ```
-
-## Contact
-
-Feel free to reach out for collaborations or opportunities!
