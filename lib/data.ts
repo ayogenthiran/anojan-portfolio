@@ -26,6 +26,7 @@ export interface Experience {
   dates: string
   description: string[]
   logo?: string
+  website?: string
   // tag?: string // Removed tag property
 }
 
@@ -105,10 +106,12 @@ export const experienceData: Experience[] = [
     location: "Toronto, Ontario",
     dates: "Jan 2025 – Apr 2025",
     logo: "/images/resume/kaidu.png",
+    website: "https://www.kaidu.ai/",
     description: [
-      "Used DBSCAN clustering and dynamic time warping on RSSI signals to classify device mobility with 89% accuracy, analyzing thousands of time-series samples.",
-      "Reduced false positives by 600% by integrating a dynamic Fourier smoothing filter into RSSI preprocessing.",
-      "Delivered an end-to-end ML pipeline by containerizing FastAPI services with Docker, enabling real-time motion classification and boosting IoT system responsiveness by 40%; monitored model outputs using Grafana dashboards.",
+      "Developed and deployed an end-to-end machine learning pipeline for real-time motion classification, boosting IoT system responsiveness by <strong>40%</strong> by containerizing <strong>FastAPI</strong> services with <strong>Docker</strong> and monitoring performance with <strong>Grafana</strong>.",
+      "Implemented a time-series classification model utilizing <strong>DBSCAN</strong> and <strong>DTW</strong>, leveraging <strong>MLflow</strong> to track experiments and tune hyperparameters, ultimately achieving 89% predictive accuracy.",
+      "Pioneered a data preprocessing technique by integrating a dynamic <strong>Fourier smoothing filter</strong>, drastically reducing model false positives by over <strong>600%</strong> and significantly improving signal quality for analysis.",
+      "Collaborated with senior engineers to validate data pipelines, test model integrity against baseline metrics, and present final project findings to technical stakeholders, demonstrating the model's business value.",
     ],
   },
   {

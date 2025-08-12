@@ -59,7 +59,18 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ className }) => {
                     )}
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl md:text-2xl font-semibold text-[#00A79D]">{exp.company}</h4>
+                    {exp.website ? (
+                      <a 
+                        href={exp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xl md:text-2xl font-semibold text-[#00A79D] hover:text-[#00A79D]/80 transition-colors duration-200 cursor-pointer"
+                      >
+                        {exp.company}
+                      </a>
+                    ) : (
+                      <h4 className="text-xl md:text-2xl font-semibold text-[#00A79D]">{exp.company}</h4>
+                    )}
                   </div>
                 </div>
 
@@ -80,7 +91,10 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ className }) => {
               {exp.description.map((point, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="w-2 h-2 bg-[#00A79D] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-300 leading-relaxed">{point}</p>
+                  <p 
+                    className="text-gray-300 leading-relaxed text-justify"
+                    dangerouslySetInnerHTML={{ __html: point }}
+                  />
                 </div>
               ))}
             </div>
