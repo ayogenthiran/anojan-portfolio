@@ -25,6 +25,7 @@ export interface Experience {
   location: string
   dates: string
   description: string[]
+  logo?: string
   // tag?: string // Removed tag property
 }
 
@@ -51,13 +52,13 @@ export interface Project {
 }
 
 export interface BlogPost {
+  id: string
   title: string
   date: string
   excerpt: string
-  link: string
-  readingTime: string // Added readingTime property
-  icon: LucideIcon // Added icon property
-  // tags: string[] // Removed tags property
+  content: string
+  readingTime: string
+  icon: LucideIcon
 }
 
 export interface SkillCategory {
@@ -101,7 +102,8 @@ export const experienceData: Experience[] = [
     title: "Data Science and Engineering Intern",
     company: "Kaidu.ai",
     location: "Toronto, Ontario",
-    dates: "Jan 2025 – May 2025",
+    dates: "Jan 2025 – Apr 2025",
+    logo: "/kaidu.png",
     description: [
       "Used DBSCAN clustering and dynamic time warping on RSSI signals to classify device mobility with 89% accuracy, analyzing thousands of time-series samples.",
       "Reduced false positives by 600% by integrating a dynamic Fourier smoothing filter into RSSI preprocessing.",
@@ -113,6 +115,7 @@ export const experienceData: Experience[] = [
     company: "Intelligence Data Science Lab, Western University",
     location: "London, Ontario",
     dates: "Apr 2024 – Dec 2024",
+    logo: "/uwo.png",
     description: [
       "Fine-tuned a DeepSELEX-inspired CNN using PyTorch on large-scale SELEX datasets, improving DNA-binding sequence classification accuracy by 20% over lab benchmarks.",
       "Enhanced miRNA-target gene prediction by fine-tuning LLaMA 3.1 and Mistral-7B models for biological sequence representation, expanding generative AI applications in bioinformatics research.",
@@ -125,6 +128,7 @@ export const experienceData: Experience[] = [
     company: "HeHealth",
     location: "Singapore", // Updated location
     dates: "Oct 2022 – Oct 2023",
+    logo: "/hehealth.png",
     description: [
       "Optimized ResNet and VGG16 CNN models on a proprietary medical imaging dataset, achieving 96% classification accuracy for STD detection; deployed models using AWS SageMaker.",
       "Built CI/CD-enabled MLOps pipelines using GitHub Actions and SageMaker Pipelines to support online batch retraining, mitigating model drift and enabling continuous learning from live diagnostic feedback.",
@@ -137,6 +141,7 @@ export const experienceData: Experience[] = [
     company: "SenzMate AIoT Intelligence",
     location: "Colombo, Sri Lanka",
     dates: "Dec 2021 – Sep 2022",
+    logo: "/senzmate.png",
     description: [
       "Developed and deployed an LSTM-based anomaly detector using TensorFlow and Flask API for edge IoT devices, achieving 90% detection accuracy and reducing false alerts by 10% in real-time monitoring.",
       "Built scalable ETL pipelines with PySpark and Dask to clean and unify 15M+ insurance claims records, improving data consistency and supporting accurate cost predictions.",

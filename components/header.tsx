@@ -32,6 +32,15 @@ const Header: React.FC<HeaderProps> = ({ sectionRefs }) => {
     if (href.startsWith("#")) {
       e.preventDefault()
       const targetId = href.substring(1)
+      
+      // If we're not on the home page and trying to navigate to a section,
+      // redirect to home page with the anchor
+      if (pathname !== "/") {
+        window.location.href = `/${href}`
+        return
+      }
+      
+      // If we're on the home page, handle smooth scroll
       const targetElement = document.getElementById(targetId)
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth" })

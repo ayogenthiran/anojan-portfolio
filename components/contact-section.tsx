@@ -1,21 +1,69 @@
 "use client" // This component needs to be a client component for form interactivity
 
 import type React from "react"
+import { useState } from "react"
+import emailjs from "@emailjs/browser"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
+import { EMAILJS_CONFIG, type EmailTemplateParams } from "@/lib/emailjs-config"
 
 interface ContactSectionProps {
   className?: string
 }
 
 const ContactSection: React.FC<ContactSectionProps> = ({ className }) => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    emailAddress: "",
+    message: ""
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Handle form submission logic here (e.g., send data to an API)
-    console.log("Form submitted!")
-    // You might want to add a success message or clear the form
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const templateParams: EmailTemplateParams = {
+        from_name: formData.fullName,
+        from_email: formData.emailAddress,
+        message: formData.message,
+        to_email: EMAILJS_CONFIG.TO_EMAIL
+      }
+
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      )
+
+      setSubmitStatus("success")
+      setFormData({ fullName: "", emailAddress: "", message: "" })
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000)
+    } catch (error) {
+      console.error("Email sending failed:", error)
+      setSubmitStatus("error")
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -26,7 +74,18 @@ const ContactSection: React.FC<ContactSectionProps> = ({ className }) => {
         always looking forward to meeting new people.
       </p>
 
-      {/* Removed Profile Picture */}
+      {/* Status Messages */}
+      {submitStatus === "success" && (
+        <div className="max-w-xl mx-auto mb-6 p-4 bg-green-900/20 border border-green-500/50 rounded-md">
+          <p className="text-green-400 font-medium">Message sent successfully! I'll get back to you soon.</p>
+        </div>
+      )}
+      
+      {submitStatus === "error" && (
+        <div className="max-w-xl mx-auto mb-6 p-4 bg-red-900/20 border border-red-500/50 rounded-md">
+          <p className="text-red-400 font-medium">Failed to send message. Please try again or contact me directly at ayogenth@uwo.ca</p>
+        </div>
+      )}
 
       {/* Contact Form */}
       <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6 px-4">
@@ -38,8 +97,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ className }) => {
             id="fullName"
             type="text"
             placeholder="Full Name"
+            value={formData.fullName}
+            onChange={handleInputChange}
             className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-foreground placeholder:text-gray-500 focus:border-accent focus:ring-accent"
             required
+            disabled={isSubmitting}
           />
         </div>
         <div className="text-left">
@@ -50,8 +112,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ className }) => {
             id="emailAddress"
             type="email"
             placeholder="example@domain.com"
+            value={formData.emailAddress}
+            onChange={handleInputChange}
             className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-foreground placeholder:text-gray-500 focus:border-accent focus:ring-accent"
             required
+            disabled={isSubmitting}
           />
         </div>
         <div className="text-left">
@@ -62,15 +127,19 @@ const ContactSection: React.FC<ContactSectionProps> = ({ className }) => {
             id="message"
             placeholder="Type your message"
             rows={5}
+            value={formData.message}
+            onChange={handleInputChange}
             className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-foreground placeholder:text-gray-500 focus:border-accent focus:ring-accent"
             required
+            disabled={isSubmitting}
           />
         </div>
         <Button
           type="submit"
-          className="w-full sm:w-auto px-8 py-3 text-lg font-semibold bg-accent hover:bg-accent/80 text-white rounded-md transition-colors duration-300 ease-in-out"
+          disabled={isSubmitting}
+          className="w-full sm:w-auto px-8 py-3 text-lg font-semibold bg-accent hover:bg-accent/80 text-white rounded-md transition-colors duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Submit
+          {isSubmitting ? "Sending..." : "Submit"}
         </Button>
       </form>
     </div>
