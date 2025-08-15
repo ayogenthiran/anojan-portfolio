@@ -10,7 +10,8 @@ interface BlogPostPageProps {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getBlogPostById(await params.id)
+  const { id } = await params
+  const post = getBlogPostById(id)
   
   if (!post) {
     return {
@@ -25,7 +26,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPageWrapper({ params }: BlogPostPageProps) {
-  const post = getBlogPostById(await params.id)
+  const { id } = await params
+  const post = getBlogPostById(id)
   
   if (!post) {
     notFound()

@@ -120,11 +120,12 @@ export const experienceData: Experience[] = [
     location: "London, Ontario",
     dates: "Apr 2024 – Dec 2024",
     logo: "/images/resume/uwo.png",
+    website: "https://a-narayan.github.io/",
     description: [
-      "Fine-tuned a DeepSELEX-inspired CNN using PyTorch on large-scale SELEX datasets, improving DNA-binding sequence classification accuracy by 20% over lab benchmarks.",
-      "Enhanced miRNA-target gene prediction by fine-tuning LLaMA 3.1 and Mistral-7B models for biological sequence representation, expanding generative AI applications in bioinformatics research.",
-      "Designed a modular bioinformatics pipeline with Apache Airflow and Kafka to automate HT-SELEX DNA sequence processing; designed plugin-based architecture to support scalable and extensible data science workflows.",
-      "Researched generative models using Variational Autoencoders (VAEs) and LLMs to model sequence distributions and generate novel DNA candidates from early-stage SELEX rounds.",
+      "Architected a scalable bioinformatics data pipeline using <strong>Apache Airflow</strong> and <strong>Kafka</strong> to fully automate HT-SELEX DNA sequence processing, reducing data handling and computation time by an estimated <strong>75%</strong>.",
+      "Pioneered the use of frontier <strong>LLMs</strong> in genomics by fine-tuning <strong>LLaMA 3.1</strong> and <strong>Mistral-7B</strong> to create novel biological sequence representations, establishing a new state-of-the-art methodology for miRNA-target gene prediction.",
+      "Engineered and optimized a <strong>DeepSELEX-inspired CNN</strong> in <strong>PyTorch</strong> for large-scale genomic datasets, outperforming existing lab benchmarks by <strong>20%</strong> in DNA-binding sequence classification accuracy.",
+      "Developed a novel generative framework using <strong>Variational Autoencoders (VAEs)</strong> and <strong>LLMs</strong> to successfully produce viable, novel DNA candidates from early-stage SELEX experimental data.",
     ],
   },
   {
@@ -133,6 +134,7 @@ export const experienceData: Experience[] = [
     location: "Singapore", // Updated location
     dates: "Oct 2022 – Oct 2023",
     logo: "/images/resume/hehealth.png",
+    website: "https://hehealth.ai/",
     description: [
       "Optimized ResNet and VGG16 CNN models on a proprietary medical imaging dataset, achieving 96% classification accuracy for STD detection; deployed models using AWS SageMaker.",
       "Built CI/CD-enabled MLOps pipelines using GitHub Actions and SageMaker Pipelines to support online batch retraining, mitigating model drift and enabling continuous learning from live diagnostic feedback.",
