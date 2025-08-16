@@ -136,10 +136,10 @@ export const experienceData: Experience[] = [
     logo: "/images/resume/hehealth.png",
     website: "https://hehealth.ai/",
     description: [
-      "Optimized ResNet and VGG16 CNN models on a proprietary medical imaging dataset, achieving 96% classification accuracy for STD detection; deployed models using AWS SageMaker.",
-      "Built CI/CD-enabled MLOps pipelines using GitHub Actions and SageMaker Pipelines to support online batch retraining, mitigating model drift and enabling continuous learning from live diagnostic feedback.",
-      "Augmented dataset by 40% using SinGAN and ConSinGAN to synthetically generate minority-class STD images, improving model robustness and generalization on underrepresented conditions.",
-      "Applied Grad-CAM to visualize and localize diagnostic features in patient images; integrated interpretability outputs into clinical dashboard to enhance transparency and patient trust.",
+      "Designed a production-grade <strong>CI/CD MLOps pipeline</strong> using <strong>GitHub Actions</strong> and <strong>AWS SageMaker</strong>, automating model retraining and deployment to combat model drift and ensure continuous learning from live clinical data.",
+      "Developed and fine-tuned <strong>ResNet</strong> & <strong>VGG16</strong> architectures on a proprietary medical imaging dataset, achieving a clinical-grade <strong>96%</strong> classification accuracy in STD detection.",
+      "Addressed critical data imbalance by generating synthetic minority-class images with <strong>SinGAN</strong> and <strong>ConSinGAN</strong>, expanding the dataset by <strong>40%</strong> and significantly boosting model robustness against underrepresented conditions.",
+      "Lead the model transparency and trust by implementing <strong>Grad-CAM</strong> to visualize key diagnostic features, integrating these explainability (<strong>XAI</strong>) outputs directly into a clinical dashboard to aid clinician decision-making.",
     ],
   },
   {
@@ -149,9 +149,10 @@ export const experienceData: Experience[] = [
     dates: "Dec 2021 – Sep 2022",
     logo: "/images/resume/senzmate.png",
     description: [
-      "Developed and deployed an LSTM-based anomaly detector using TensorFlow and Flask API for edge IoT devices, achieving 90% detection accuracy and reducing false alerts by 10% in real-time monitoring.",
-      "Built scalable ETL pipelines with PySpark and Dask to clean and unify 15M+ insurance claims records, improving data consistency and supporting accurate cost predictions.",
-      "Preprocessed unstructured insurance text using NLTK (tokenization, stemming, regex), increasing data quality and boosting performance of car repair cost prediction models.",
+      "Engineered a distributed <strong>ETL pipeline</strong> using <strong>PySpark</strong> and <strong>Dask</strong> to process, clean, and unify over <strong>15 million</strong> insurance claim records, establishing a reliable, single-source-of-truth dataset for downstream predictive modeling.",
+      "Developed, and deployed an end-to-end <strong>LSTM-based anomaly detector</strong> for edge IoT devices using <strong>TensorFlow</strong> and a <strong>Flask API</strong>, achieving <strong>90%</strong> accuracy and reducing false alerts by <strong>10%</strong> in a real-time monitoring environment.",
+      "Constructed an <strong>NLP preprocessing module</strong> using <strong>NLTK</strong> to systematically clean and structure raw insurance text, boosting the performance of car repair cost prediction models by an estimated <strong>15%</strong>.",
+      "Contributed to a key business-facing tool by engineering features from unstructured text for a car repair cost prediction model, directly improving the accuracy and reliability of cost estimates for insurance adjusters.",
     ],
   },
 ]
@@ -215,7 +216,7 @@ export const skillsData: SkillCategory[] = [
   {
     title: "Programming Languages",
     icon: Code,
-    skills: ["Python", "SQL", "C++", "Java", "MATLAB"],
+    skills: ["Python", "SQL", "JavaScript", "C++", "Java", "MATLAB"],
   },
   {
     title: "AI & Machine Learning",
@@ -230,6 +231,8 @@ export const skillsData: SkillCategory[] = [
       "NLP",
       "XAI",
       "Statistical Modeling",
+      "LangChain",
+      "LangGraph",
     ],
   },
   {
@@ -247,6 +250,8 @@ export const skillsData: SkillCategory[] = [
       "NLTK",
       "Dask",
       "PySpark",
+      "TypeScript",
+      "React",
     ],
   },
   {
