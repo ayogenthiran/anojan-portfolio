@@ -12,12 +12,12 @@ interface ProjectsSectionProps {
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
   return (
     <div className={cn("text-foreground", className)}>
-      <h2 className="text-3xl md:text-4xl font-bold text-accent mb-8 text-center">Featured Projects</h2>
-      <div className="space-y-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-accent mb-8 text-center mt-8">Featured Projects</h2>
+      <div className="space-y-12 mt-8">
         {projectData.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 bg-gray-900/50 border border-gray-700 rounded-lg hover:border-accent/50 transition-all duration-300"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-8 bg-gray-900/50 border border-gray-700 rounded-lg hover:border-accent/50 transition-all duration-300"
           >
             {/* Thumbnail Image */}
             <div className="flex-shrink-0 w-full sm:w-32 h-32 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
@@ -32,7 +32,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ className }) => {
 
             {/* Project Details */}
             <div className="flex-1">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 mt-4">
                 <h3 className="text-2xl font-semibold text-foreground">{project.title}</h3>
                 {project.date && <p className="text-gray-400 text-sm sm:text-base sm:ml-4">{project.date}</p>}
               </div>
