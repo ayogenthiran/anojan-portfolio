@@ -32,19 +32,19 @@ export default function Hero() {
           </div>
           <div className="flex gap-4 mt-6">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://linkedin.com/in/maskeynihal" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/in/anojan-yogenthiran/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-8 w-8" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://github.com/maskeynihal" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/ayogenthiran" target="_blank" rel="noopener noreferrer">
                 <Github className="h-8 w-8" />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://twitter.com/maskeynihal" target="_blank" rel="noopener noreferrer">
+              <Link href="https://x.com/ayogenth" target="_blank" rel="noopener noreferrer">
                 <Twitter className="h-8 w-8" />
                 <span className="sr-only">Twitter</span>
               </Link>

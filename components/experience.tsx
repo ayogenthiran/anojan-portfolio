@@ -5,7 +5,13 @@ export default function Experience() {
   const experiences = [
     {
       title: "Data Science and Engineering Intern",
-      company: "Kaidu.ai",
+      company: (
+        <>
+          <a href="https://www.kaidu.ai/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+            Kaidu.ai
+          </a>
+        </>
+      ),
       period: "Jan 2025 – Apr 2025",
       location: "Toronto, Ontario",
       logo: "/images/resume/kaidu.png",
@@ -20,7 +26,13 @@ export default function Experience() {
     },
     {
       title: "Research Associate",
-      company: "Intelligence Data Science Lab, Western University",
+      company: (
+        <>
+          <a href="https://a-narayan.github.io/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+            Intelligence Data Science Lab, Western University
+          </a>
+        </>
+      ),
       period: "Apr 2024 – Dec 2024",
       location: "London, Ontario",
       logo: "/images/resume/uwo.png",
@@ -35,7 +47,13 @@ export default function Experience() {
     },
     {
       title: "Associate AI/ML Engineer",
-      company: "HeHealth",
+      company: (
+        <>
+          <a href="https://hehealth.ai/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+            HeHealth
+          </a>
+        </>
+      ),
       period: "Oct 2022 – Oct 2023",
       location: "Singapore",
       logo: "/images/resume/hehealth.png",
@@ -53,7 +71,13 @@ export default function Experience() {
     },
     {
       title: "Associate ML Engineer",
-      company: "SenzMate AIoT Intelligence",
+      company: (
+        <>
+          <a href="https://www.senzmate.com/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+            SenzMate AIoT Intelligence
+          </a>
+        </>
+      ),
       period: "Dec 2021 – Sep 2022",
       location: "Colombo, Sri Lanka",
       logo: "/images/resume/senzmate.png",
@@ -86,9 +110,7 @@ export default function Experience() {
                     <div className="flex items-start gap-4">
                       {/* Company Logo */}
                       <div className="flex-shrink-0">
-                        <div className={`w-16 h-16 rounded-lg border border-border/50 flex items-center justify-center overflow-hidden p-2 shadow-sm ${
-                          experience.company === "Kaidu.ai" ? "bg-transparent" : "bg-white"
-                        }`}>
+                        <div className="w-16 h-16 rounded-lg border border-border/50 flex items-center justify-center overflow-hidden p-2 shadow-sm bg-white">
                           <img
                             src={experience.logo || "/placeholder.svg"}
                             alt={`${experience.company} logo`}

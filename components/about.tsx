@@ -18,7 +18,7 @@ export default function About() {
 
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-justify">
                 As a Research Assistant at the Intelligence Data Science Lab, I had the opportunity to work under the
-                guidance of <span className="text-primary font-medium">Dr. Apurva Narayan</span>, focusing on generative
+                guidance of <a href="https://a-narayan.github.io/" target="_blank" rel="noopener noreferrer" className="text-primary font-medium cursor-pointer">Dr. Apurva Narayan</a>, focusing on generative
                 AI research to accelerate drug discovery by identifying optimal aptamers. I'm driven by the mission to
                 craft AI solutions that not only tackle challenges but also create a positive impact on millions of
                 lives.
