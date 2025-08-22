@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/anojanyogenthiran/Documents/Projects/anojan-portfolio/app/layout\":[\"static/media/baa020e15443c7c9-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
