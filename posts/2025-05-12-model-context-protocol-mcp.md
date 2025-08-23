@@ -3,7 +3,7 @@ title: 'Model Context Protocol (MCP): The Universal Adapter for AI Integration'
 date: '2025-05-12'
 excerpt: "Discover how Anthropic's Model Context Protocol (MCP) is reshaping AI integration by standardizing connections between models and external tools, APIs, and data."
 readingTime: "8 min read"
-icon: "Brain"
+icon: "Network"
 ---
 
 Artificial Intelligence (AI) is transforming industries, from software development to customer service. But one critical bottleneck remains: **integration**. Traditionally, connecting AI models to external data, APIs, and services has required custom, complex setups—each one tailored for a specific use case.
