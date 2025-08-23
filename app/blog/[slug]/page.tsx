@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="pt-32 pb-8">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-foreground leading-tight max-w-4xl">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-primary leading-tight max-w-4xl">
               {post.title}
             </h1>
             

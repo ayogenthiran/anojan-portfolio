@@ -33,7 +33,7 @@ export default function BlogPage() {
                     <div className="flex-1">
                       <div className="flex items-start justify-between gap-4">
                         <div className="space-y-2">
-                          <h2 className="text-xl font-semibold leading-tight">
+                          <h2 className="text-xl font-semibold leading-tight text-primary">
                             {post.title}
                           </h2>
                           <p className="text-muted-foreground">

@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section id="home" className="py-20 md:py-32 flex flex-col items-center justify-center min-h-[90vh]">
+    <section id="home" className="flex flex-col items-center justify-center h-screen">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center space-y-4 text-center">
           <div className="space-y-2">
