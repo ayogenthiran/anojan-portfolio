@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowUpCircle, Github, Linkedin, Twitter, FileText, Menu } from "lucide-react"
+import { ArrowUpCircle, Github, Linkedin, Twitter, FileText } from "lucide-react"
 import Link from "next/link"
 
 export default function Hero() {
@@ -47,12 +47,6 @@ export default function Hero() {
               <Link href="https://x.com/ayogenth" target="_blank" rel="noopener noreferrer">
                 <Twitter className="h-8 w-8" />
                 <span className="sr-only">Twitter</span>
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="#projects">
-                <Menu className="h-8 w-8" />
-                <span className="sr-only">Portfolio</span>
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
